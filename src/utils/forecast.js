@@ -9,9 +9,9 @@ const forecast = ({latitude, longitude, location} = {}, callback) => {
         } else if (body.error) {
             callback('Undefind params', undefined)
         } else {
-            const {temperature, feelslike} = body.current
+            const {temperature, feelslike, uv_index} = body.current
             callback(undefined, {forecast: 'It is currently ' + temperature + 
-            ' degrees out. It feels like ' + feelslike + ' degreese out.', location})
+            ' degrees out. It feels like ' + feelslike + ' degreese out. UV index ' + uv_index, location})
         }
     })
 }
